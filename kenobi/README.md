@@ -1,5 +1,5 @@
 # [Kenobi-Opensource](https://aayush9029.github.io/KenobiSite/)
-Open-source implementation of the Kenobi macOS app. pipenv readme
+Open-source implementation of the Kenobi macOS app.
 
 [![pylint](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/pylint.yml/badge.svg)](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/pylint.yml) [![pytest](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/pytest.yml/badge.svg?branch=main)](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/pytest.yml)
 
