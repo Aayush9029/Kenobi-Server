@@ -51,7 +51,7 @@ class Emulator:
         if received_key in self.valid_keys:
             self.keyboard.press(self.valid_keys[received_key])
         else:
-            self.logger.error(f"Invalid key {received_key}")
+            self.logger.info(f"Invalid key {received_key}")
 
     def launch_app(self, app: str):
         """

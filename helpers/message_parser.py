@@ -63,9 +63,9 @@ class MessageParser:
             if self.validate_key(key):
                 return key, value
 
-            self.logger.error(f"Invalid key: {key}")
+            self.logger.info(f"Invalid key: {key}")
             raise ValueError(f"Invalid key: {key}")
-        self.logger.error(f"Invalid message: {message}")
+        self.logger.info(f"Invalid message: {message}")
         raise ValueError(f"Invalid data received: {message}")
 
     def extract_x_y(self, value):
@@ -79,5 +79,5 @@ class MessageParser:
         if '@' in value:
             mouse_x, mouse_y = value.split('@')
             return mouse_x, mouse_y
-        self.logger.error(f"Invalid data received: {value}")
+        self.logger.info(f"Invalid data received: {value}")
         raise ValueError(f"Invalid data received: {value}")

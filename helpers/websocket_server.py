@@ -64,9 +64,9 @@ class WebsocketServer:
                     elif key in ("MEDIA", "KEY"):
                         self.emulator.emulate_key(value)
                     else:
-                        self.logger.error(f"Invalid key: {key}")
+                        self.logger.info(f"Invalid key: {key}")
                 except ValueError as error:
-                    self.logger.error(f"Invalid message: {error}")
+                    self.logger.info(f"Invalid message: {error}")
 
             except websockets.exceptions.ConnectionClosed:
                 self.logger.info(
