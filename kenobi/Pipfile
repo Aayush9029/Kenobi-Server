@@ -4,18 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+pynput = "*"
 websockets = "*"
 playsound = "*"
-pynput = "*"
 
 [dev-packages]
-autopep8 = "*"
+setuptools = "*"
 pylint = "*"
 pytest = "*"
-setuptools = "*"
 
 [requires]
 python_version = "3.9"
-
-[scripts]
-tests = "python -m pytest"
