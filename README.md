@@ -17,6 +17,10 @@ Download the Apple Watch app to get started.
 - Release: https://pypi.org/project/kenobi-app/
 - Beta: https://test.pypi.org/project/kenobi-app/
 
+```sh
+pip install kenobi-app
+```
+
 ### Usage
 
 ```python
