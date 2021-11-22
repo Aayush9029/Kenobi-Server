@@ -4,12 +4,7 @@ from setuptools import find_packages, setup
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
-
-
-def list_reqs(fname="requirements.txt"):
-    with open(fname) as fd:
-        return fd.read().splitlines()
-
+    
 setup(
     name="kenobi",
     version="1.0.0",
@@ -21,7 +16,11 @@ setup(
     url="https://github.com/Aayush9029/Kenobi-Server/tree/main",
     py_modules=["kenobi"],
     packages=find_packages(),
-    install_requires=list_reqs(),
+    install_requires=[
+        "pynput",
+        "websockets",
+        "playsound"
+    ],
     classifiers=[
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
