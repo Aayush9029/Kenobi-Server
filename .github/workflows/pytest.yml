@@ -1,7 +1,7 @@
 name: pytest
 
 on:
-  push:
+  pull:
     branches: [ main ]
     paths-ignore:
     - '**/*.md'
