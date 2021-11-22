@@ -24,6 +24,7 @@ class CustomLogger:
         self.logger = logging.getLogger(name)
         self.logger.addHandler(logging.StreamHandler())
         # Save the log file as a .log file in the logs directory
+        # Kinda counter-intuitive, will fix later
         if not debug:
             self.logger.setLevel(logging.DEBUG)
         else:
@@ -39,20 +40,20 @@ class CustomLogger:
                 makedirs(f"{path.expanduser('~')}/.kenobi/logs")
                 self.logger.addHandler(logging.FileHandler(
                     f"{path.expanduser('~')}/.kenobi/logs/{name}.log", "a"))
-                self.warning("Logger folder initialized for file %s", name)
+                self.logger.info("Logger folder initialized for file %s", name)
             except FileExistsError:
-                self.error(
+                self.logger.error(
                     "Logger could not be initialized. Logs directory not found.")
             except PermissionError:
-                self.error(
+                self.logger.error(
                     "Logger could not be initialized. Permission denied.")
         except PermissionError:
-            self.error(
+            self.logger.error(
                 "Logger could not be initialized. Permission denied.")
         except Exception as error:
-            self.error(
+            self.logger.error(
                 "Logger could not be initialized. An unknown error occurred.")
-            self.error(error)
+            self.logger.error(error)
 
     def info(self, message):
         """
