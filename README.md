@@ -40,6 +40,9 @@ python3 -m kenobi &
 ```
 
 
+### Here's the expected output
+![Screen Shot 2021-11-22 at 2 17 44 PM](https://user-images.githubusercontent.com/43297314/142921896-93bbf13c-8c96-45e4-b18f-1f4b29288831.png)
+
 ### What is [this repo?](https://github.com/Aayush9029/Kenobi-Server)
 It's repo for the opensource version of Kenobi desktop app which works on Windows, Linux along side MacOS.
 
