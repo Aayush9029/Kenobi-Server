@@ -1,15 +1,22 @@
-# [Kenobi-Server](https://aayush9029.github.io/KenobiSite/)
-PIP package for opensource implementation of the kenobi macOS app.
+# [Kenobi-Opensource](https://aayush9029.github.io/KenobiSite/)
+Open-source implementation of the Kenobi macOS app.
 
 [![pylint](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/pylint.yml/badge.svg)](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/pylint.yml) [![pytest](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/pytest.yml/badge.svg?branch=main)](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/pytest.yml)
 
 ---
-Download the Apple Watch app to get started.
 
-<a href="https://apps.apple.com/us/app/kenobi/id1595469125"><img src="https://raw.githubusercontent.com/Aayush9029/Kenobi-Server/main/readme-assets/download-appstore-icon.png" width="150px"></a>
+### Usage
 
-![Apple watch image with Kenobi app running](https://aayush9029.github.io/KenobiSite/img/mainresize.png)
+```python
+from kenobi import Kenobi
+Kenobi()
+```
 
+*Kenobi will start listening for client's web-socket commands.*
+
+> You can either spawn a new thread or run this in the background. 
+
+[More Info and Documentation](https://github.com/Aayush9029/Kenobi-Server)
 
 ### Features
   - Media Playback
@@ -48,16 +55,4 @@ Download the Apple Watch app to get started.
     - Windows / Linux
       - TBD
 
-
-### Usage
-
-```python
-from kenobi import Kenobi
-Kenobi()
-```
-
-*Kenobi will start listening for client's websocket commands.*
-
-> You can spawn a new thread, or run it this in the background. 
-
-[More Info and Documentations](https://github.com/Aayush9029/Kenobi-Server)
+> This provides server framework for your application, you can use this to quickly create client applications for Android, iOS or even use PWA / web-sockets (via browser)
