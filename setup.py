@@ -12,7 +12,7 @@ requirements = [
 
 setup(
     name="kenobi",
-    version="9.0.0",
+    version="1.0.0",
     author="Aayush Pokharel",
     author_email="aayushpokharel36@gmail.com",
     description="Opensource desktop application for Kenobi",
