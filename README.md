@@ -32,11 +32,11 @@ python3
 ### App usage
 
 ```bash
-python3 -c "from kenobi import Kenobi as k;k()"
+python3 -m kenobi 
 ```
 *if you want to run the program in the background add an ampersand at the end*
 ```bash
-python3 -c "from kenobi import Kenobi as k;k()" &
+python3 -m kenobi &
 ```
 
 
