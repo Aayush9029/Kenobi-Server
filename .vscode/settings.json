@@ -1,0 +1,6 @@
+{
+    "restructuredtext.confPath": "",
+    "restructuredtext.preview.docutils.disabled": true,
+    "restructuredtext.languageServer.disabled": true,
+    "restructuredtext.linter.disabled": true
+}

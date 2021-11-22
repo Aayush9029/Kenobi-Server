@@ -2,7 +2,7 @@
 
 from setuptools import find_packages, setup
 
-with open("pypiREADME.md", "r") as fh:
+with open("PyPi.md", "r") as fh:
     long_description = fh.read()
 
 
@@ -13,7 +13,7 @@ def list_reqs(fname="requirements.txt"):
 
 setup(
     name="kenobi",
-    version="4.0",
+    version="0.1.0",
     author="Aayush Pokharel",
     author_email="aayushpokharel36@gmail.com",
     description="Opensource desktop application for Kenobi",
