@@ -21,4 +21,4 @@ jobs:
         if [ -f requirements-test.txt ]; then pip install -r requirements-test.txt; fi
     - name: Analysing the code with pylint
       run: |
-        pylint $(find . -name "*.py" | xargs)
+        find . -type f -name "*.py" | xargs pylint --fail-under 9

@@ -48,6 +48,7 @@ class Emulator:
         Check if the key is valid, and if so
         Emulate the key using the keyboard controller
         """
+        
         if received_key in self.valid_keys:
             self.keyboard.press(self.valid_keys[received_key])
         else:

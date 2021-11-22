@@ -10,7 +10,6 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 
 from helpers.message_parser import MessageParser
 
-
 def test_exception():
     """
     Test if exceptions are thrown correctly
@@ -23,7 +22,6 @@ def test_exception():
         assert True
     except:
         assert False
-
 
 def test_parse_message():
     """
@@ -131,5 +129,3 @@ def test_parse_message_with_words(test_input, _):
             assert True
         except:
             assert False
-
-
