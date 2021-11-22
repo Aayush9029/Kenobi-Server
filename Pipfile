@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pynput = "*"
+websockets = "*"
+playsound = "*"
+
+[dev-packages]
+pytest = "*"
+pylint = "*"
+autopep8 = "*"
+setuptools = "*"
+twine = "*"
+
+[requires]
+python_version = "3.9"
