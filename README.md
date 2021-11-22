@@ -12,6 +12,13 @@ Download the Apple Watch app to get started.
 
 ---
 
+### Usage
+
+```python
+from kenobi import Kenobi
+Kenobi()
+```
+
 ### What is [this repo?](https://github.com/Aayush9029/Kenobi-Server)
 It's repo for the opensource version of Kenobi desktop app which works on Windows, Linux along side MacOS.
 
