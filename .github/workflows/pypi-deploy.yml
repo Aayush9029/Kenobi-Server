@@ -1,0 +1,13 @@
+on:
+  release:
+    types: [published]
+name: Publish Python 🐍 distributions 📦 to PyPI
+jobs:
+  build-n-publish:
+  - name: Deploy package
+    uses: remorses/pypi@master
+    with:
+      setupfile: ./kenobi/setup.py
+      username: ${{ secrets.PYPI_USERNAME }}
+      password: ${{ secrets.PYPI_PASSWORD }}
+
