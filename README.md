@@ -34,6 +34,11 @@ python3
 ```bash
 python3 -c "from kenobi import Kenobi as k;k()"
 ```
+*if you want to run the program in the background add an ampersand at the end*
+```bash
+python3 -c "from kenobi import Kenobi as k;k()" &
+```
+
 
 ### What is [this repo?](https://github.com/Aayush9029/Kenobi-Server)
 It's repo for the opensource version of Kenobi desktop app which works on Windows, Linux along side MacOS.
