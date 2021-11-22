@@ -21,12 +21,18 @@ Download the Apple Watch app to get started.
 pip install kenobi-app
 ```
 
-### Usage
+### PIP Usage
 
 ```python
 python3 
 >>> from kenobi import Kenobi
 >>> Kenobi()
+```
+
+### App usage
+
+```bash
+python3 -c "from kenobi import Kenobi as k;k()"
 ```
 
 ### What is [this repo?](https://github.com/Aayush9029/Kenobi-Server)
