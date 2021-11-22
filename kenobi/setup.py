@@ -1,7 +1,6 @@
 # pylint: skip-file
 
 from setuptools import find_packages, setup
-import setuptools
 
 with open("../README.md", "r") as fh:
     long_description = fh.read()
@@ -21,7 +20,7 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/Aayush9029/Kenobi-Server/tree/main",
     py_modules=["kenobi"],
-    packages=setuptools.find_packages(),
+    packages=find_packages(),
     install_requires=list_reqs(),
     classifiers=[
         "Programming Language :: Python",
