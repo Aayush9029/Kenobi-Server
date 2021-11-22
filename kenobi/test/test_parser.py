@@ -106,9 +106,9 @@ def generate_words():
     """
     Generate random words
     """
-    return ''.join(choice(string.ascii_letters) for _ in range(10))
+    return ''.join(choice(string.ascii_letters) for _ in range(randint(10, 100)))
     
-words = [generate_words() for _ in range(50)]
+words = [generate_words() for _ in range(25)]
 
 words = words + headers
 shuffle(words)
@@ -121,14 +121,15 @@ def test_parse_message_with_words(test_input, _):
     message = test_input
     parser = MessageParser()
     if test_input in headers:
-        parsed = parser.parse(message)
-        assert parsed == (test_input, None)
+        parsed = parser.extract_key(message)
+        assert parsed == test_input
     else:
         try:
             parsed = parser.parse(message)
-            parser == (None, test_input)
+            assert parsed[0] == None or parsed[1] == None
         except ValueError:
             assert True
         except:
             assert False
-    
+
+
