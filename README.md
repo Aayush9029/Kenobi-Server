@@ -1,23 +1,23 @@
 # [Kenobi-Server](https://aayush9029.github.io/KenobiSite/)
-WIP Opensource desktop application for Kenobi. 
+WIP Opensource desktop application for Kenobi.
 
 [![CodeQL](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/codeql-analysis.yml)
 
 ---
-Download the apple watch app to get started.
+Download the Apple Watch app to get started.
 
 <a href="https://apps.apple.com/us/app/kenobi/id1595469125"><img src="https://raw.githubusercontent.com/Aayush9029/Kenobi-Server/main/readme-assets/download-appstore-icon.png" width="150px"></a>
 
-![Apple watch image with kenobi app running](https://aayush9029.github.io/KenobiSite/img/mainresize.png)
+![Apple watch image with Kenobi app running](https://aayush9029.github.io/KenobiSite/img/mainresize.png)
 
 ---
 
 ### What is [this repo?](https://github.com/Aayush9029/Kenobi-Server)
-It's repo for the opensource version of kenobi desktop app which works on windows, linux along side macOS.
+It's repo for the opensource version of Kenobi desktop app which works on Windows, Linux along side MacOS.
 
 ### Why is the desktop app opensource?
 To help others who are struggling with writing code that commnunicates with between *desktop <=> iOS Devices*
-> It is not limited to iOS devices (can be expanded to PWA, android apps and even desktop apps)
+> It is not limited to iOS devices (can be expanded to PWA, Android apps and even desktop apps)
 
 
 ### How does this work?
@@ -59,7 +59,7 @@ To help others who are struggling with writing code that commnunicates with betw
     - Power off
    
   - Launch apps
-    - MACOS
+    - MacOS
       - FaceTime, Messages, Mail, Music, Notes, Safari, System Pref, Apple TV, Youtube
     - Windows / Linux
       - TBD
