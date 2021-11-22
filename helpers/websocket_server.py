@@ -8,8 +8,9 @@ import websockets
 
 from .custom_logger import CustomLogger
 from .emulator import Emulator
+from .local_ip import get_local_ip, get_pairing_code
 from .message_parser import MessageParser as mp
-from .local_ip import get_local_ip
+
 HOST = "0.0.0.0"
 PORT = 9999
 
@@ -28,7 +29,8 @@ class WebsocketServer:
         self.connected_ip = None
         self.connected_port = None
         # Start server
-        self.logger.warning(f"Starting websocket server..@ {get_local_ip()}")
+        self.logger.warning(f"websocket initialized @ {get_local_ip()}:9999")
+        self.logger.warning(f"\nYour pairing code is {get_pairing_code()}\n")
         asyncio.get_event_loop().run_until_complete(self.start())
 
     async def start(self) -> None:
