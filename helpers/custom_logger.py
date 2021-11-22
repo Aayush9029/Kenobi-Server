@@ -22,7 +22,6 @@ class CustomLogger:
         Initialize the logger
         """
         self.logger = logging.getLogger(name)
-        self.logger.setLevel(logging.DEBUG)
         self.logger.addHandler(logging.StreamHandler())
         # Save the log file as a .log file in the logs directory
         if not debug:
