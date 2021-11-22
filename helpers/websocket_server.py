@@ -9,7 +9,7 @@ import websockets
 from .custom_logger import CustomLogger
 from .emulator import Emulator
 from .message_parser import MessageParser as mp
-
+from .local_ip import get_local_ip
 HOST = "0.0.0.0"
 PORT = 9999
 
@@ -28,6 +28,7 @@ class WebsocketServer:
         self.connected_ip = None
         self.connected_port = None
         # Start server
+        self.logger.warning(f"Starting websocket server..@ {get_local_ip()}")
         asyncio.get_event_loop().run_until_complete(self.start())
 
     async def start(self) -> None:
@@ -44,7 +45,7 @@ class WebsocketServer:
         """
         self.connected_ip = websocket.remote_address[0]
         self.connected_port = websocket.remote_address[1]
-        self.logger.info(
+        self.logger.warning(
             f"Client connected @ {self.connected_ip}:{self.connected_port}")
 
         while True:
@@ -69,7 +70,7 @@ class WebsocketServer:
                     self.logger.info(f"Invalid message: {error}")
 
             except websockets.exceptions.ConnectionClosed:
-                self.logger.info(
+                self.logger.warning(
                     f"Client disconnected @ {self.connected_ip}:{self.connected_port}")
                 self.connected_ip = None
                 self.connected_port = None

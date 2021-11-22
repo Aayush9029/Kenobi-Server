@@ -63,9 +63,9 @@ class MessageParser:
             if self.validate_key(key):
                 return key, value
 
-            self.logger.info(f"Invalid key: {key}")
+            self.logger.debug(f"Invalid key: {key}")
             raise ValueError(f"Invalid key: {key}")
-        self.logger.info(f"Invalid message: {message}")
+        self.logger.debug(f"Invalid message: {message}")
         raise ValueError(f"Invalid data received: {message}")
 
     def extract_x_y(self, value):
