@@ -59,7 +59,7 @@ class Kenobi:
         if self.logs:
             self.delete_logs()
             return
-
+        print("Starting kenobi...")
         websocket_server.WebsocketServer(debug=self.debug)
         asyncio.get_event_loop().run_forever()
 

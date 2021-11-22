@@ -4,14 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+playsound = "*"
 pynput = "*"
 websockets = "*"
-playsound = "*"
 
 [dev-packages]
 pytest = "*"
 pylint = "*"
-autopep8 = "*"
 setuptools = "*"
 twine = "*"
 

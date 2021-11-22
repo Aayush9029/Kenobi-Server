@@ -26,7 +26,7 @@ class CustomLogger:
         # Save the log file as a .log file in the logs directory
         # Kinda counter-intuitive, will fix later
         if not debug:
-            self.logger.setLevel(logging.DEBUG)
+            self.logger.setLevel(logging.WARN)
         else:
             self.logger.setLevel(logging.INFO)
         # Store logs in user's home directory in .kenobi/logs
