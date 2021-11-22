@@ -3,6 +3,7 @@ File containing class which represents the emulator.
 Controlling media, open apps and links, playing audio, etc is done here.
 """
 import webbrowser
+from subprocess import run
 from os import system
 
 from playsound import playsound
@@ -25,7 +26,7 @@ class Emulator:
         self.logger = CustomLogger(self.__class__.__name__)
         self.operating_system = OperatingSystem()
         self.keyboard = Controller()
-        self.vaild_keys = {
+        self.valid_keys = {
             "left": Key.left,
             "right": Key.right,
             "up": Key.up,
@@ -42,15 +43,16 @@ class Emulator:
             "volumedown": Key.media_volume_down
         }
 
-    def emulate_key(self, recieved_key: str):
+    def emulate_key(self, received_key: str):
         """
         Check if the key is valid, and if so
         Emulate the key using the keyboard controller
         """
-        if recieved_key in self.vaild_keys:
-            self.keyboard.press(self.vaild_keys[recieved_key])
+        
+        if received_key in self.valid_keys:
+            self.keyboard.press(self.valid_keys[received_key])
         else:
-            self.logger.error(f"Invalid key {recieved_key}")
+            self.logger.error(f"Invalid key {received_key}")
 
     def launch_app(self, app: str):
         """
@@ -60,14 +62,15 @@ class Emulator:
             self.launch_site(url=app)
         else:
             # TEST Launch apps for other OSs
-            if self.operating_system.platform == "Linux":
-                system(f"xdg-open {app}")
-            elif self.operating_system.platform == "Windows":
-                system(f"start {app}")
-            elif self.operating_system.platform == "Darwin":
-                print("opening in mac")
-                system(f"open -a {app}")
-            else:
+            launch_args = {
+                'Linux': ['xdg-open'],
+                'Windows': ['start'],
+                'Darwin': ['open', '-a']
+            }
+
+            try:
+                run(launch_args[self.operating_system.platform] + [app])
+            except KeyError:
                 print(f"Invalid OS \"{self.operating_system}\"")
 
     @staticmethod
