@@ -1,7 +1,7 @@
 # [Kenobi-Server](https://aayush9029.github.io/KenobiSite/)
 WIP Opensource desktop application for Kenobi.
 
-[![CodeQL](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/codeql-analysis.yml)
+[![CodeQL](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/codeql-analysis.yml/badge.svg?branch=alpha-staging)](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/codeql-analysis.yml) [![pylint](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/pylint.yml/badge.svg)](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/pylint.yml)
 
 ---
 Download the Apple Watch app to get started.
