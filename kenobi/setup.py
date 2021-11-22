@@ -1,12 +1,16 @@
+# pylint: skip-file
+
 from setuptools import find_packages, setup
 import setuptools
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+
 def list_reqs(fname="requirements.txt"):
     with open(fname) as fd:
         return fd.read().splitlines()
+
 
 setup(
     name="kenobi",

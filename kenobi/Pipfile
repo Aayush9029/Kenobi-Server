@@ -12,7 +12,6 @@ pynput = "*"
 autopep8 = "*"
 pylint = "*"
 pytest = "*"
-pipenv-setup = "*"
 setuptools = "*"
 
 [requires]

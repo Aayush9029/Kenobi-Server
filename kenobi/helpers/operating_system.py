@@ -4,7 +4,7 @@ Find out what operating system is running.
 
 import platform
 
-from custom_logger import CustomLogger
+from helpers.custom_logger import CustomLogger
 
 
 class OperatingSystem:

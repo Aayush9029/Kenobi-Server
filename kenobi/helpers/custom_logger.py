@@ -33,14 +33,14 @@ class CustomLogger:
         try:
             self.logger.addHandler(logging.FileHandler(
                 f"{path.expanduser('~')}/.kenobi/logs/{name}.log", "a"))
-            self.logger.info(f"Logger initialized for {name}")
+            self.logger.info("Logger file initialized for file %s", name)
         except FileNotFoundError:
             # make the logs directory if it doesn't exist
             try:
                 makedirs(f"{path.expanduser('~')}/.kenobi/logs")
                 self.logger.addHandler(logging.FileHandler(
                     f"{path.expanduser('~')}/.kenobi/logs/{name}.log", "a"))
-                self.logger.info(f"Logger folder initialized for file {name}")
+                self.logger.info("Logger folder initialized for file %s", name)
             except FileExistsError:
                 self.logger.error(
                     "Logger could not be initialized. Logs directory not found.")
@@ -50,10 +50,10 @@ class CustomLogger:
         except PermissionError:
             self.logger.error(
                 "Logger could not be initialized. Permission denied.")
-        except Exception as e:
+        except Exception as error:
             self.logger.error(
                 "Logger could not be initialized. An unknown error occurred.")
-            self.logger.error(e)
+            self.logger.error(error)
 
     def info(self, message):
         """
