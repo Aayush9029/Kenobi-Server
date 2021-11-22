@@ -9,9 +9,8 @@ websockets = "*"
 playsound = "*"
 
 [dev-packages]
-setuptools = "*"
-pylint = "*"
 pytest = "*"
+pylint = "*"
 
 [requires]
 python_version = "3.9"

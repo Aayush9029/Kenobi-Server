@@ -2,7 +2,7 @@
 
 from setuptools import find_packages, setup
 
-with open("../README.md", "r") as fh:
+with open("README.md", "r") as fh:
     long_description = fh.read()
 
 
@@ -12,7 +12,7 @@ def list_reqs(fname="requirements.txt"):
 
 setup(
     name="kenobi",
-    version="1.0",
+    version="2",
     author="Aayush Pokharel",
     author_email="aayushpokharel36@gmail.com",
     description="Opensource desktop application for Kenobi",
