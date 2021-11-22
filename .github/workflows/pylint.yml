@@ -3,6 +3,9 @@ name: pylint
 on:
   pull_request:
     branches: [ main ]
+    paths-ignore:
+    - '**/*.md'
+    - '**/*.txt'
 jobs:
   build:
     runs-on: ubuntu-latest
