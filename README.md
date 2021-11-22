@@ -24,8 +24,9 @@ pip install kenobi-app
 ### Usage
 
 ```python
-from kenobi import Kenobi
-Kenobi()
+python3 
+>>> from kenobi import Kenobi
+>>> Kenobi()
 ```
 
 ### What is [this repo?](https://github.com/Aayush9029/Kenobi-Server)
