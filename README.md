@@ -21,14 +21,6 @@ Download the Apple Watch app to get started.
 pip install kenobi-app
 ```
 
-### PIP Usage
-
-```python
-python3 
->>> from kenobi import Kenobi
->>> Kenobi()
-```
-
 ### App usage
 
 ```bash
@@ -37,6 +29,15 @@ python3 -m kenobi
 *if you want to run the program in the background add an ampersand at the end*
 ```bash
 python3 -m kenobi &
+```
+
+
+### PIP Usage
+
+```python
+python3 
+>>> from kenobi import Kenobi
+>>> Kenobi()
 ```
 
 
