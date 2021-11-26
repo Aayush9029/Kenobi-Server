@@ -98,3 +98,5 @@ To help others who are struggling with writing code that commnunicates with betw
    
 
 > The opensource desktop app is CLI based for now keeping it's resource usage as minimum as possible.
+
+[License - DWYW © Aayush Pokharel](https://github.com/Aayush9029/Kenobi-Server/blob/main/LICENSE.md)
