@@ -13,7 +13,6 @@ pytest = "*"
 pylint = "*"
 setuptools = "*"
 twine = "*"
-pyautogui = "*"
 
 [requires]
 python_version = "3.9"
