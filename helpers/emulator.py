@@ -5,7 +5,6 @@ Controlling media, open apps and links, playing audio, etc is done here.
 import webbrowser
 from subprocess import run
 from os import system
-import Quartz
 
 from playsound import playsound
 from pynput.keyboard import Controller, Key
@@ -60,6 +59,10 @@ class Emulator:
             self.logger.info(f"Invalid key {received_key}")
 
     def hid_post_aux_key(self, key):
+        """
+        hid post aux key emulation for macOS
+        Pynput is not working on macOS so we use this workaround
+        """
         import Quartz
                 # NSEvent.h
         NSSystemDefined = 14
@@ -77,7 +80,10 @@ class Emulator:
             self.logger.error(f"Invalid key {key}")
             return
 
-        def doKey(down):
+        def do_key(down):
+            """
+            Handles the key press (keydown or keyup)
+            """
             ev = Quartz.NSEvent.otherEventWithType_location_modifierFlags_timestamp_windowNumber_context_subtype_data1_data2_(
                 NSSystemDefined, # type
                 (0,0), # location
@@ -92,8 +98,8 @@ class Emulator:
                 
             cev = ev.CGEvent()
             Quartz.CGEventPost(0, cev)
-        doKey(True)
-        doKey(False)
+        do_key(True)
+        do_key(False)
 
     def launch_app(self, app: str):
         """
