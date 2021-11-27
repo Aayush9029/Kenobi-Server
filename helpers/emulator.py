@@ -27,7 +27,7 @@ class Emulator:
         self.operating_system = OperatingSystem()
         self.keyboard = Controller()
 
-        self.valid_keys = {
+        self.valid_direction_keys = {
             "left": Key.left,
             "right": Key.right,
             "up": Key.up,
@@ -36,6 +36,9 @@ class Emulator:
             "tab": Key.tab,
             "return": Key.enter,
             "escape": Key.esc,
+        }
+
+        self.valid_media_keys = {
             "playpause": Key.media_play_pause,
             "next": Key.media_next,
             "previous": Key.media_previous,
@@ -50,11 +53,16 @@ class Emulator:
         Emulate the key using the keyboard controller
         """
 
-        if received_key in self.valid_keys:
+        if received_key in self.valid_direction_keys:
+            self.keyboard.press(self.valid_direction_keys[received_key])
+        else:
+            self.logger.info(f"Invalid key {received_key}")
+
+        if received_key in self.valid_media_keys:
             if self.operating_system.platform == "Darwin":
                 self.hid_post_aux_key(received_key)
                 return
-            self.keyboard.press(self.valid_keys[received_key])
+            self.keyboard.press(self.valid_media_keys[received_key])
         else:
             self.logger.info(f"Invalid key {received_key}")
 
@@ -73,13 +81,15 @@ class Emulator:
         play_key = 16
         next_key = 17
         previous_key = 18
+        mute_key = 7
 
         supportedcmds = {
             'playpause': play_key,
             'next': next_key,
             'previous': previous_key,
             'volumeup': sound_up_key,
-            'volumedown': sound_down_key
+            'volumedown': sound_down_key,
+            'mute': mute_key
         }
         if key in supportedcmds:
             key = supportedcmds[key]
