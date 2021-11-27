@@ -64,7 +64,7 @@ class Emulator:
         Pynput is not working on macOS so we use this workaround
         """
         import Quartz
-                # NSEvent.h
+        # NSEvent.h
         NSSystemDefined = 14
 
         # hidsystem/ev_keymap.h
@@ -74,10 +74,10 @@ class Emulator:
         NX_KEYTYPE_NEXT = 17
         NX_KEYTYPE_PREVIOUS = 18
         supportedcmds = {
-            'playpause': NX_KEYTYPE_PLAY, 
-            'next': NX_KEYTYPE_NEXT, 
+            'playpause': NX_KEYTYPE_PLAY,
+            'next': NX_KEYTYPE_NEXT,
             'previous': NX_KEYTYPE_PREVIOUS,
-            'volumeup': NX_KEYTYPE_SOUND_UP, 
+            'volumeup': NX_KEYTYPE_SOUND_UP,
             'volumedown': NX_KEYTYPE_SOUND_DOWN
         }
         if key in supportedcmds:
@@ -91,17 +91,17 @@ class Emulator:
             Handles the key press (keydown or keyup)
             """
             event = Quartz.NSEvent.otherEventWithType_location_modifierFlags_timestamp_windowNumber_context_subtype_data1_data2_(
-                NSSystemDefined, # type
-                (0,0), # location
-                0xa00 if down else 0xb00, # flags
-                0, # timestamp
-                0, # window
-                0, # ctx
-                8, # subtype
-                (key << 16) | ((0xa if down else 0xb) << 8), # data1
-                -1 # data2
-                )
-                
+                NSSystemDefined,  # type
+                (0, 0),  # location
+                0xa00 if down else 0xb00,  # flags
+                0,  # timestamp
+                0,  # window
+                0,  # ctx
+                8,  # subtype
+                (key << 16) | ((0xa if down else 0xb) << 8),  # data1
+                -1  # data2
+            )
+
             c_event = event.CGEvent()
             Quartz.CGEventPost(0, c_event)
         do_key(True)
@@ -205,8 +205,3 @@ class Emulator:
             system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
         elif self.operating_system.platform == "Darwin":
             system("pmset sleepnow")
-
-
-if __name__ == "__main__":
-    key = Emulator()
-    key.emulate_key("volumeup")

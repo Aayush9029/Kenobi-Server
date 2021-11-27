@@ -1,6 +1,12 @@
 {
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
     "restructuredtext.confPath": "",
     "restructuredtext.preview.docutils.disabled": true,
     "restructuredtext.languageServer.disabled": true,
-    "restructuredtext.linter.disabled": true
+    "restructuredtext.linter.disabled": true,
+    "python.formatting.provider": "autopep8",
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
 }
