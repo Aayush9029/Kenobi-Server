@@ -75,11 +75,11 @@ class Emulator:
         previous_key = 18
 
         supportedcmds = {
-            'playpause': sound_up_key,
-            'next': sound_down_key,
-            'previous': play_key,
-            'volumeup': next_key,
-            'volumedown': previous_key
+            'playpause': play_key,
+            'next': next_key,
+            'previous': previous_key,
+            'volumeup': sound_up_key,
+            'volumedown': sound_down_key
         }
         if key in supportedcmds:
             key = supportedcmds[key]
