@@ -26,6 +26,7 @@ class Emulator:
         self.logger = CustomLogger(self.__class__.__name__)
         self.operating_system = OperatingSystem()
         self.keyboard = Controller()
+
         self.valid_keys = {
             "left": Key.left,
             "right": Key.right,
@@ -48,10 +49,64 @@ class Emulator:
         Check if the key is valid, and if so
         Emulate the key using the keyboard controller
         """
+
         if received_key in self.valid_keys:
+            if self.operating_system.platform == "Darwin":
+                self.hid_post_aux_key(received_key)
+                return
             self.keyboard.press(self.valid_keys[received_key])
         else:
             self.logger.info(f"Invalid key {received_key}")
+
+    def hid_post_aux_key(self, key):
+        """
+        hid post aux key emulation for macOS
+        Pynput is not working on macOS so we use this workaround
+        """
+        import Quartz
+        # NSEvent.h
+        NSSystemDefined = 14
+
+        # hidsystem/ev_keymap.h
+        sound_up_key = 0
+        sound_down_key = 1
+        play_key = 16
+        next_key = 17
+        previous_key = 18
+
+        supportedcmds = {
+            'playpause': sound_up_key,
+            'next': sound_down_key,
+            'previous': play_key,
+            'volumeup': next_key,
+            'volumedown': previous_key
+        }
+        if key in supportedcmds:
+            key = supportedcmds[key]
+        else:
+            self.logger.error(f"Invalid key {key}")
+            return
+
+        def do_key(down):
+            """
+            Handles the key press (keydown or keyup)
+            """
+            event = Quartz.NSEvent.otherEventWithType_location_modifierFlags_timestamp_windowNumber_context_subtype_data1_data2_(
+                NSSystemDefined,  # type
+                (0, 0),  # location
+                0xa00 if down else 0xb00,  # flags
+                0,  # timestamp
+                0,  # window
+                0,  # ctx
+                8,  # subtype
+                (key << 16) | ((0xa if down else 0xb) << 8),  # data1
+                -1  # data2
+            )
+
+            c_event = event.CGEvent()
+            Quartz.CGEventPost(0, c_event)
+        do_key(True)
+        do_key(False)
 
     def launch_app(self, app: str):
         """
@@ -151,8 +206,3 @@ class Emulator:
             system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
         elif self.operating_system.platform == "Darwin":
             system("pmset sleepnow")
-
-
-if __name__ == "__main__":
-    key = Emulator()
-    key.emulate_key("volumeup")

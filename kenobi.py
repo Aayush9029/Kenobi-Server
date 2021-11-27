@@ -9,6 +9,7 @@ from shutil import rmtree
 
 from helpers import websocket_server
 
+
 class Kenobi:
     """
     Class Main which contains the main function.
@@ -62,6 +63,7 @@ class Kenobi:
         print("Starting kenobi...")
         websocket_server.WebsocketServer(debug=self.debug)
         asyncio.get_event_loop().run_forever()
+
 
 if __name__ == "__main__":
     Kenobi()
