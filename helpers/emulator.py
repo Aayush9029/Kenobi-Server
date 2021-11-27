@@ -68,17 +68,17 @@ class Emulator:
         NSSystemDefined = 14
 
         # hidsystem/ev_keymap.h
-        NX_KEYTYPE_SOUND_UP = 0
-        NX_KEYTYPE_SOUND_DOWN = 1
-        NX_KEYTYPE_PLAY = 16
-        NX_KEYTYPE_NEXT = 17
-        NX_KEYTYPE_PREVIOUS = 18
+        SOUNDUP = 0
+        SOUNDDOWN = 1
+        PLAY = 16
+        NEXT = 17
+        PREVIOUS = 18
         supportedcmds = {
-            'playpause': NX_KEYTYPE_PLAY,
-            'next': NX_KEYTYPE_NEXT,
-            'previous': NX_KEYTYPE_PREVIOUS,
-            'volumeup': NX_KEYTYPE_SOUND_UP,
-            'volumedown': NX_KEYTYPE_SOUND_DOWN
+            'playpause': SOUNDUP,
+            'next': SOUNDDOWN,
+            'previous': PLAY,
+            'volumeup': NEXT,
+            'volumedown': PREVIOUS
         }
         if key in supportedcmds:
             key = supportedcmds[key]
