@@ -21,14 +21,6 @@ Download the Apple Watch app to get started.
 pip install kenobi-app
 ```
 
-### PIP Usage
-
-```python
-python3 
->>> from kenobi import Kenobi
->>> Kenobi()
-```
-
 ### App usage
 
 ```bash
@@ -39,6 +31,18 @@ python3 -m kenobi
 python3 -m kenobi &
 ```
 
+
+### PIP Usage
+
+```python
+python3 
+>>> from kenobi import Kenobi
+>>> Kenobi()
+```
+
+
+### Here's the expected output
+![Screen Shot 2021-11-22 at 2 17 44 PM](https://user-images.githubusercontent.com/43297314/142921896-93bbf13c-8c96-45e4-b18f-1f4b29288831.png)
 
 ### What is [this repo?](https://github.com/Aayush9029/Kenobi-Server)
 It's repo for the opensource version of Kenobi desktop app which works on Windows, Linux along side MacOS.
@@ -94,3 +98,5 @@ To help others who are struggling with writing code that commnunicates with betw
    
 
 > The opensource desktop app is CLI based for now keeping it's resource usage as minimum as possible.
+
+[License - DWYW © Aayush Pokharel](https://github.com/Aayush9029/Kenobi-Server/blob/main/LICENSE.md)

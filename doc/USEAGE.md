@@ -24,6 +24,6 @@ pip install kenobi-app
 ```
 3. Type this command to run the app
 ```python
-python3 -c "from kenobi import Kenobi as k;k()" &
+python3 -m kenobi-app
 ```
 ---
