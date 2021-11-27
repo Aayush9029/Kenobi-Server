@@ -90,7 +90,7 @@ class Emulator:
             """
             Handles the key press (keydown or keyup)
             """
-            ev = Quartz.NSEvent.otherEventWithType_location_modifierFlags_timestamp_windowNumber_context_subtype_data1_data2_(
+            event = Quartz.NSEvent.otherEventWithType_location_modifierFlags_timestamp_windowNumber_context_subtype_data1_data2_(
                 NSSystemDefined, # type
                 (0,0), # location
                 0xa00 if down else 0xb00, # flags
@@ -102,8 +102,8 @@ class Emulator:
                 -1 # data2
                 )
                 
-            cev = ev.CGEvent()
-            Quartz.CGEventPost(0, cev)
+            c_event = event.CGEvent()
+            Quartz.CGEventPost(0, c_event)
         do_key(True)
         do_key(False)
 
