@@ -49,11 +49,11 @@ class Emulator:
         Check if the key is valid, and if so
         Emulate the key using the keyboard controller
         """
-        if self.operating_system.platform == "Darwin":
-            self.hid_post_aux_key(received_key)
-            return
 
         if received_key in self.valid_keys:
+            if self.operating_system.platform == "Darwin":
+                self.hid_post_aux_key(received_key)
+                return
             self.keyboard.press(self.valid_keys[received_key])
         else:
             self.logger.info(f"Invalid key {received_key}")
@@ -73,7 +73,13 @@ class Emulator:
         NX_KEYTYPE_PLAY = 16
         NX_KEYTYPE_NEXT = 17
         NX_KEYTYPE_PREVIOUS = 18
-        supportedcmds = {'playpause': NX_KEYTYPE_PLAY, 'next': NX_KEYTYPE_NEXT, 'previous': NX_KEYTYPE_PREVIOUS, 'volumeup': NX_KEYTYPE_SOUND_UP, 'volumedown': NX_KEYTYPE_SOUND_DOWN}
+        supportedcmds = {
+            'playpause': NX_KEYTYPE_PLAY, 
+            'next': NX_KEYTYPE_NEXT, 
+            'previous': NX_KEYTYPE_PREVIOUS,
+            'volumeup': NX_KEYTYPE_SOUND_UP, 
+            'volumedown': NX_KEYTYPE_SOUND_DOWN
+        }
         if key in supportedcmds:
             key = supportedcmds[key]
         else:
