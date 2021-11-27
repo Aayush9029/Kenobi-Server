@@ -68,17 +68,18 @@ class Emulator:
         NSSystemDefined = 14
 
         # hidsystem/ev_keymap.h
-        SOUNDUP = 0
-        SOUNDDOWN = 1
-        PLAY = 16
-        NEXT = 17
-        PREVIOUS = 18
+        sound_up_key = 0
+        sound_down_key = 1
+        play_key = 16
+        next_key = 17
+        previous_key = 18
+
         supportedcmds = {
-            'playpause': SOUNDUP,
-            'next': SOUNDDOWN,
-            'previous': PLAY,
-            'volumeup': NEXT,
-            'volumedown': PREVIOUS
+            'playpause': sound_up_key,
+            'next': sound_down_key,
+            'previous': play_key,
+            'volumeup': next_key,
+            'volumedown': previous_key
         }
         if key in supportedcmds:
             key = supportedcmds[key]
