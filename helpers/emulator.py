@@ -26,6 +26,23 @@ class Emulator:
         self.logger = CustomLogger(self.__class__.__name__)
         self.operating_system = OperatingSystem()
         self.keyboard = Controller()
+
+        self.mac_key_codes = {
+            "left": Key.left,
+            "right": Key.right,
+            "up": Key.up,
+            "down": Key.down,
+            "space": Key.space,
+            "tab": Key.tab,
+            "return": Key.enter,
+            "escape": Key.esc,
+            "playpause": Key.media_play_pause,
+            "next": Key.media_next,
+            "previous": Key.media_previous,
+            "mute": Key.media_volume_mute,
+            "volumeup": Key.media_volume_up,
+            "volumedown": Key.media_volume_down
+        }
         self.valid_keys = {
             "left": Key.left,
             "right": Key.right,
