@@ -2,9 +2,9 @@
 WIP Opensource desktop application for Kenobi.
 
 
-![Ubuntu](https://img.shields.io/badge/Ubuntu-no%20tests-blueviolet) ![Windows](https://img.shields.io/badge/Windows-working%20(partial)-important) ![macOS](https://img.shields.io/badge/MacOS-working%20(fully)-success) 
+![macOS](https://img.shields.io/badge/MacOS-working%20(fully)-brightgreen?style=flat&labelColor=343b41&color=3fc855&logo=apple) ![windows](https://img.shields.io/badge/windows-working%20(partial)-brightgreen?style=flat&labelColor=343b41&color=3fc855&logo=windows) ![linux](https://img.shields.io/badge/linux-not%20tested-orange?style=flat&labelColor=343b41&color=838c96&logo=linux)
 
-[![CodeQL](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/codeql-analysis.yml/badge.svg?branch=alpha-staging)](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/codeql-analysis.yml) [![pylint](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/pylint.yml/badge.svg)](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/pylint.yml) [![pytest](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/pytest.yml/badge.svg?branch=main)](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/pytest.yml)
+[![CodeQL](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/codeql-analysis.yml/badge.svg?branch=alpha-staging?style=flat-square&)](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/codeql-analysis.yml) [![pylint](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/pylint.yml/badge.svg)](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/pylint.yml) [![pytest](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/pytest.yml/badge.svg?branch=main)](https://github.com/Aayush9029/Kenobi-Server/actions/workflows/pytest.yml)
 
 ---
 Download the Apple Watch app to get started.
