@@ -51,7 +51,6 @@ class Emulator:
         Emulate the key using the keyboard controller
         """
         if self.operating_system.platform == "Darwin":
-            print("Using hid_post_aux")
             self.hid_post_aux_key(received_key)
             return
 
