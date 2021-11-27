@@ -5,6 +5,7 @@ Controlling media, open apps and links, playing audio, etc is done here.
 import webbrowser
 from subprocess import run
 from os import system
+import Quartz
 
 from playsound import playsound
 from pynput.keyboard import Controller, Key
@@ -27,22 +28,6 @@ class Emulator:
         self.operating_system = OperatingSystem()
         self.keyboard = Controller()
 
-        self.mac_key_codes = {
-            "left": Key.left,
-            "right": Key.right,
-            "up": Key.up,
-            "down": Key.down,
-            "space": Key.space,
-            "tab": Key.tab,
-            "return": Key.enter,
-            "escape": Key.esc,
-            "playpause": Key.media_play_pause,
-            "next": Key.media_next,
-            "previous": Key.media_previous,
-            "mute": Key.media_volume_mute,
-            "volumeup": Key.media_volume_up,
-            "volumedown": Key.media_volume_down
-        }
         self.valid_keys = {
             "left": Key.left,
             "right": Key.right,
@@ -65,10 +50,51 @@ class Emulator:
         Check if the key is valid, and if so
         Emulate the key using the keyboard controller
         """
+        if self.operating_system.platform == "Darwin":
+            print("Using hid_post_aux")
+            self.hid_post_aux_key(received_key)
+            return
+
         if received_key in self.valid_keys:
             self.keyboard.press(self.valid_keys[received_key])
         else:
             self.logger.info(f"Invalid key {received_key}")
+
+    def hid_post_aux_key(self, key):
+        import Quartz
+                # NSEvent.h
+        NSSystemDefined = 14
+
+        # hidsystem/ev_keymap.h
+        NX_KEYTYPE_SOUND_UP = 0
+        NX_KEYTYPE_SOUND_DOWN = 1
+        NX_KEYTYPE_PLAY = 16
+        NX_KEYTYPE_NEXT = 17
+        NX_KEYTYPE_PREVIOUS = 18
+        supportedcmds = {'playpause': NX_KEYTYPE_PLAY, 'next': NX_KEYTYPE_NEXT, 'previous': NX_KEYTYPE_PREVIOUS, 'volumeup': NX_KEYTYPE_SOUND_UP, 'volumedown': NX_KEYTYPE_SOUND_DOWN}
+        if key in supportedcmds:
+            key = supportedcmds[key]
+        else:
+            self.logger.error(f"Invalid key {key}")
+            return
+
+        def doKey(down):
+            ev = Quartz.NSEvent.otherEventWithType_location_modifierFlags_timestamp_windowNumber_context_subtype_data1_data2_(
+                NSSystemDefined, # type
+                (0,0), # location
+                0xa00 if down else 0xb00, # flags
+                0, # timestamp
+                0, # window
+                0, # ctx
+                8, # subtype
+                (key << 16) | ((0xa if down else 0xb) << 8), # data1
+                -1 # data2
+                )
+                
+            cev = ev.CGEvent()
+            Quartz.CGEventPost(0, cev)
+        doKey(True)
+        doKey(False)
 
     def launch_app(self, app: str):
         """
