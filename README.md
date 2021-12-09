@@ -1,6 +1,13 @@
 # [Kenobi-Server](https://aayush9029.github.io/KenobiSite/)
-WIP Opensource desktop application for Kenobi.
+Archived Opensource desktop application for Kenobi.
 
+# Developer Notice: There's a brand new iOS, watchOS and macOS app in developement. Kenobi uses sockets where as the brand new app will use Multipeer and watch connectivity (Apple's native framework) which will dramatically decrease issues and maintenance. 
+
+### Kenobi-Server and the app will be archived in the coming weeks
+
+#### Current users will get access to the new app for free!
+
+---
 
 ![macOS](https://img.shields.io/badge/MacOS-working%20(fully)-brightgreen?style=flat&labelColor=343b41&color=3fc855&logo=apple) ![windows](https://img.shields.io/badge/windows-working%20(partial)-brightgreen?style=flat&labelColor=343b41&color=3fc855&logo=windows) ![linux](https://img.shields.io/badge/linux-not%20tested-orange?style=flat&labelColor=343b41&color=838c96&logo=linux)
 
